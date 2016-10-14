@@ -104,8 +104,27 @@ proceeding regular statements\n"
 1. The intermediate script.
 2. The user input from the GUI in the following JSON format as the Standard Input.
 ```
+[
+    {
+        "value":"/home/user/output_dir",
+        "sequence":0,
+    }, 
+    {
+    
+    }
+]
 ```
 
 #### Program Output
 
 The submittable version of the tagged job batch script at the Standard Output.
+```
+preceeding regular statements
+
+#PBS -o /home/user/output_dir
+var_A=2
+cat /home/user/document_file
+cp /home/user/result/source_file1 /home/user/result/source_file1 -t $HOME
+
+proceeding regular statements
+```
