@@ -54,7 +54,7 @@ The format of \<GUI skeleton>
         "path_type": "directory", 
         "prefix": "Output Directory: ", 
         "suffix": "", 
-        "id_sequence": 0, 
+        "sequence": 0, 
         "input_type": "browser"
     }, 
     {
@@ -62,13 +62,13 @@ The format of \<GUI skeleton>
         "input_type": "text", 
         "prefix": "Parallelism: ", 
         "suffix": "Thread(s)", 
-        "id_sequence": 1
+        "sequence": 1
     }, 
     {
         "path_type": "both", 
         "prefix": "Document to Display: ", 
         "suffix": "", 
-        "id_sequence": 2, 
+        "sequence": 2, 
         "input_type": "browser"
     }, 
     {
@@ -78,7 +78,7 @@ The format of \<GUI skeleton>
             "path_type": "both", 
             "prefix": "Source File", 
             "suffix": "", 
-            "id_sequence": 3, 
+            "sequence": 3, 
             "input_type": "browser"
         }, 
         "suffix": "", 
@@ -102,29 +102,44 @@ proceeding regular statements\n"
 #### Program Input
 
 1. The intermediate script.
-2. The user input from the GUI in the following JSON format as the Standard Input.
+2. The user input from the GUI in the following JSON format.
 ```
 [
     {
-        "value":"/home/user/output_dir",
-        "sequence":0,
+        "value": "/home/user/output_dir",
+        "sequence": 0
     }, 
     {
-    
+        "value": "2",
+        "sequence": 1
+    },
+    {
+        "value": "/home/user/document_file",
+        "sequence": 2
+    },
+    {
+        "value": "/home/user/result/source_file1",
+        "sequence": 3,
+        "sub_sequence": 0
+    },
+    {
+        "value": "/home/user/result/source_file2",
+        "sequence": 3,
+        "sub_sequence": 1
     }
 ]
 ```
 
 #### Program Output
 
-The submittable version of the tagged job batch script at the Standard Output.
+The submittable version of the tagged job batch script.
 ```
 preceeding regular statements
 
 #PBS -o /home/user/output_dir
 var_A=2
 cat /home/user/document_file
-cp /home/user/result/source_file1 /home/user/result/source_file1 -t $HOME
+cp /home/user/result/source_file1 /home/user/result/source_file2 -t $HOME
 
 proceeding regular statements
 ```
