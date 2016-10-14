@@ -200,7 +200,7 @@ def parseListBlock(block_string, variable_sequence):
             parseInputBlock(
                 block_string[index_block_start:index_block_end], 
                 variable_sequence)
-        variable_list_string += variable_string
+        variable_list_string += " " + variable_string
 
         input_list.append(form_skeleton_input)
 
