@@ -101,7 +101,8 @@ def parseVarListBlock(block_string, variable_sequence):
     index_end_of_prefix = \
         block_string[index_start_of_prefix:].find(',')
     form_skeleton["prefix"] = \
-        str(block_string[index_start_of_prefix:index_start_of_prefix + index_end_of_prefix])
+        str(block_string[index_start_of_prefix:\
+            index_start_of_prefix + index_end_of_prefix])
 
     index_end_of_suffix = \
         block_string[index_end_of_prefix+1:].find(',')
