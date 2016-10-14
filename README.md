@@ -1,5 +1,5 @@
 # Job-Script-to-GUI
-A set of directive rules and a parser for converting a job batch script into some graphical user interface.
+A set of directive rules and parsers for converting a job batch script into some graphical user interface and retrieving the user input back into the script.
 
 ## Supported Directives
 
@@ -15,7 +15,14 @@ A set of directive rules and a parser for converting a job batch script into som
 \<BIC var_list,\<prefix>,\<suffix>,\<BIC-LSU input block template> LSU><br />
 "BIC-LSU input block template" can be any one of the "BIC-LSU Input Block".
 
-## Program Input
+## Program Usage
+
+1. Run **BICLSU_job_script_to_GUI_skeleton** on the job batch script tagged with directives to generate an intermediate script and a skeleton for creating a GUI.  The intermediate script and the skeleton maintain the mapping of each pair of the variable in the intermediate script and the variables in the skeleton using an identical sequence number. 
+2. Run **BICLSU_GUI_to_final_job_script** to map the inputs collected from the GUI back into the intermediate script to generate a submittable job batch script.
+
+### BICLSU_job_script_to_GUI_skeleton Usage
+
+#### Program Input
 
 A job batch script file tagged with directives.
 
@@ -30,7 +37,7 @@ cp <BIC var_list,Files to Copy: ,,<BIC input,file_browser,both,Source File, LSU>
 proceeding regular statements
 ```
 
-## Program Output
+#### Program Output
 
 A JSON string in the following format.
 ```
@@ -89,3 +96,16 @@ cat <BIC 2 LSU>\n
 cp <BIC 3 LSU> -t $HOME\n
 proceeding regular statements\n"
 ```
+
+### BICLSU_GUI_to_final_job_script Usage
+
+#### Program Input
+
+1. The intermediate script.
+2. The user input from the GUI in the following JSON format as the Standard Input.
+```
+```
+
+#### Program Output
+
+The submittable version of the tagged job batch script at the Standard Output.
