@@ -35,7 +35,7 @@ def parseBrowserBlock(
     form_skeleton["prefix"] = str(prefix)
     form_skeleton["suffix"] = str(suffix)
     form_skeleton["input_type"] = "browser"
-    form_skeleton["id_sequence"] = variable_sequence
+    form_skeleton["sequence"] = variable_sequence
     variable_string = \
         "<BIC " + str(variable_sequence) + " LSU>"
     variable_sequence += 1
@@ -56,7 +56,7 @@ def parseTextBlock(
     form_skeleton["default"] = str(default)
     form_skeleton["suffix"] = str(suffix)
     form_skeleton["input_type"] = "text"
-    form_skeleton["id_sequence"] = variable_sequence
+    form_skeleton["sequence"] = variable_sequence
     variable_string = \
         "<BIC " + str(variable_sequence) + " LSU>"
     variable_sequence += 1
