@@ -103,8 +103,6 @@ BICLSU_GUI_to_final_job_script \<converted script path> \<input from GUI path>
 
 #### Format of \<input from GUI path>
 
-1. The intermediate script.
-2. The user input from the GUI in the following JSON format.
 ```
 [
     {
