@@ -89,12 +89,12 @@ The format of \<GUI skeleton>
 
 The format of \<converted script>
 ```
-"preceeding regular statements\n
+preceeding regular statements\n
 #PBS -o <BIC 0 LSU>\n
 var_A=<BIC 1 LSU>\n
 cat <BIC 2 LSU>\n
 cp <BIC 3 LSU> -t $HOME\n
-proceeding regular statements\n"
+proceeding regular statements\n
 ```
 
 ### BICLSU_GUI_to_final_job_script Usage
