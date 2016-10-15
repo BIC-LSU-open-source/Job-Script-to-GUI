@@ -17,12 +17,12 @@ A set of directive rules and parsers for converting a job batch script into some
 
 ## Program Usage
 
-1. Run **BICLSU_job_script_to_GUI_skeleton** on the job batch script tagged with directives to generate a coverted script and a skeleton for creating a GUI.  The converted script and the skeleton maintain the mapping of each pair of the variable in the converted script and the variables in the skeleton using an identical sequence number. 
-2. Run **BICLSU_GUI_to_final_job_script** to map the inputs collected from the GUI back into the converted script to generate a submittable job batch script.
+1. Run **BICLSU_JobScript_to_GUISkeleton.py** on the job batch script tagged with directives to generate a coverted script and a skeleton for creating a GUI.  The converted script and the skeleton maintain the mapping of each pair of the variable in the converted script and the variables in the skeleton using an identical sequence number. 
+2. Run **BICLSU_GUIInput_to_JobScript.py** to map the inputs collected from the GUI back into the converted script to generate a submittable job batch script.
 
-### BICLSU_job_script_to_GUI_skeleton Usage
+### BICLSU_JobScript_to_GUISkeleton.py Usage
 
-BICLSU_job_script_to_GUI_skeleton \<tagged job script path>
+BICLSU_JobScript_to_GUISkeleton.py \<tagged job script path>
 
 #### Format of \<tagged job script path>
 
@@ -97,9 +97,9 @@ cp <BIC 3 LSU> -t $HOME\n
 proceeding regular statements\n
 ```
 
-### BICLSU_GUI_to_final_job_script Usage
+### BICLSU_GUIInput_to_JobScript.py Usage
 
-BICLSU_GUI_to_final_job_script \<converted script path> \<input from GUI path>
+BICLSU_GUIInput_to_JobScript.py \<converted script path> \<input from GUI path>
 
 #### Format of \<input from GUI path>
 
@@ -149,6 +149,6 @@ proceeding regular statements
 ### BIC-LSU Project
 
 1. The experienced user of an application tags an existing job batch script using the directives.
-2. The BIC-LSU system automatically parses the tagged script with the **BICLSU_job_script_to_GUI_skeleton** and generates web page GUI.
-3. The BIC-LSU system automatically generates the submittable job batch script with the **BICLSU_GUI_to_final_job_script** and input from the GUI and then submits the job.  The experienced user can instantly monitor the whole process and correct any errors.
+2. The BIC-LSU system automatically parses the tagged script with the **BICLSU_JobScript_to_GUISkeleton.py** and generates web page GUI.
+3. The BIC-LSU system automatically generates the submittable job batch script with the **BICLSU_GUIInput_to_JobScript.py** and input from the GUI and then submits the job.  The experienced user can instantly monitor the whole process and correct any errors.
 4. The BIC-LSU preserves the converted script for subsequent GUI generation and job submission.
