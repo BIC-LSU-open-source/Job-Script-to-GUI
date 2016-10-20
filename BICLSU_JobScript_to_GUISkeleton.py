@@ -85,6 +85,8 @@ def parseInputBlock(block_string, variable_sequence):
                 block_segments[2], block_segments[3], 
                 block_segments[4], variable_sequence)
 
+    form_skeleton["component_type"] = "input"
+
     return form_skeleton, variable_string, variable_sequence
 
 # end of parseInputBlock
@@ -94,6 +96,8 @@ def parseVarListBlock(block_string, variable_sequence):
     #print("block: " + str(block_string))
 
     form_skeleton = {}
+
+    form_skeleton["component_type"] = "var_list"
 
     # consume "var_list" column
     index_start_of_prefix = block_string.find(',') + 1   
@@ -109,7 +113,7 @@ def parseVarListBlock(block_string, variable_sequence):
     form_skeleton["suffix"] = \
         str(block_string[index_end_of_prefix+1:index_end_of_suffix])
 
-    form_skeleton["list_type"] = "variable"
+    #form_skeleton["list_type"] = "variable"
 
     match_left = re.compile(r"<BIC")
     match_right = re.compile(r"LSU>")
@@ -142,6 +146,7 @@ def parseVarListBlock(block_string, variable_sequence):
     form_skeleton_input, variable_string, variable_sequence = \
         parseInputBlock(block_string\
             [index_block_start:index_block_end], variable_sequence)
+    form_skeleton_input["compoent_type"] = "input"
 
     form_skeleton["input_template"] = form_skeleton_input
 
@@ -154,6 +159,8 @@ def parseListBlock(block_string, variable_sequence):
     #print("block: " + str(block_string))
 
     form_skeleton = {}
+
+    form_skeleton["component_type"] = "list"
 
     # consume "list" column
     index_start_of_prefix = block_string.find(',') + 1   
@@ -168,7 +175,7 @@ def parseListBlock(block_string, variable_sequence):
     form_skeleton["suffix"] = \
         str(block_string[index_end_of_prefix+1:index_end_of_suffix])
 
-    form_skeleton["list_type"] = "fixed"
+    #form_skeleton["list_type"] = "fixed"
 
     input_list = []
     variable_list_string = ""
@@ -201,6 +208,7 @@ def parseListBlock(block_string, variable_sequence):
             parseInputBlock(
                 block_string[index_block_start:index_block_end], 
                 variable_sequence)
+        form_skeleton_input["component type"] = "input"
         variable_list_string += " " + variable_string
 
         input_list.append(form_skeleton_input)
