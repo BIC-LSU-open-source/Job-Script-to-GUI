@@ -51,6 +51,7 @@ The format of \<GUI skeleton>
 ```
 [
     {
+        "component_type": "input",
         "path_type": "directory", 
         "prefix": "Output Directory: ", 
         "suffix": "", 
@@ -58,6 +59,7 @@ The format of \<GUI skeleton>
         "input_type": "browser"
     }, 
     {
+        "component_type": "input",
         "default": "4", 
         "input_type": "text", 
         "prefix": "Parallelism: ", 
@@ -65,6 +67,7 @@ The format of \<GUI skeleton>
         "sequence": 1
     }, 
     {
+        "component_type": "input",
         "path_type": "both", 
         "prefix": "Document to Display: ", 
         "suffix": "", 
@@ -72,17 +75,18 @@ The format of \<GUI skeleton>
         "input_type": "browser"
     }, 
     {
+        "component_type": "var_list",
         "prefix": "Files to Copy: ", 
         "input_template": 
         {
+            "component_type": "input",
             "path_type": "both", 
             "prefix": "Source File", 
             "suffix": "", 
             "sequence": 3, 
             "input_type": "browser"
         }, 
-        "suffix": "", 
-        "list_type": "variable"
+        "suffix": ""
     }
 ]
 ```
@@ -151,4 +155,4 @@ proceeding regular statements
 1. The experienced user of an application tags an existing job batch script using the directives.
 2. The BIC-LSU system automatically parses the tagged script with the **BICLSU_JobScript_to_GUISkeleton.py** and generates web page GUI.
 3. The BIC-LSU system automatically generates the submittable job batch script with the **BICLSU_GUIInput_to_JobScript.py** and input from the GUI and then submits the job.  The experienced user can instantly monitor the whole process and correct any errors.
-4. The BIC-LSU preserves the converted script for subsequent GUI generation and job submission.
+4. The BIC-LSU preserves the skeleton and converted script for subsequent GUI generation and job submission.
