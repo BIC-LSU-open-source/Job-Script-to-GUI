@@ -27,7 +27,7 @@ def parseBrowserBlock(
 
     form_skeleton = {}
 
-    if str(path_type) in ["both", "directory"]:
+    if str(path_type) in ["all", "directory"]:
         form_skeleton["path_type"] = str(path_type)
     else:
         raise Exception(
@@ -276,8 +276,8 @@ if __name__ == "__main__":
     #
     # BIC-LSU Input Block:
     # <BIC input,text,<prefix>,<default>,<suffix> LSU>
-    # <BIC input,file_brwoser,<allowed path type>,<prefix>,<suffix> Lsu>
-    # allowed path type: "both" or "directory"
+    # <BIC input,file_browser,<allowed path type>,<prefix>,<suffix> Lsu>
+    # allowed path type: "all" or "directory"
     # BIC-LSU List Block:
     # <BIC list,<prefix>,<suffix>,<BIC-LSU input block 1>,...,<BIC-LSU input block N> LSU>
     # BIC-LSU Variable List Block:
@@ -287,7 +287,7 @@ if __name__ == "__main__":
     #script = '''
     #    no_of_processor=<BIC input,text,Length:,,inch LSU>
     #    dependencies=<BIC list,All dependencies,,<BIC input,text,math,, LSU>,<BIC input,text,io,, LSU> LSU>
-    #    genome_libraries=<BIC var_list,Genome Libraries,,<BIC input,file_browser,both,Library, LSU> LSU>
+    #    genome_libraries=<BIC var_list,Genome Libraries,,<BIC input,file_browser,all,Library, LSU> LSU>
     #    output=<BIC input,file_browser,directory,, LSU>
     #'''
 
