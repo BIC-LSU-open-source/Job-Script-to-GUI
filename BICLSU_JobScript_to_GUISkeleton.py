@@ -303,7 +303,7 @@ if __name__ == "__main__":
 
     variable_sequence = 0
 
-    print("tagged script: " + str(script))
+    #print("tagged script: " + str(script))
 
     index_total_end = len(script)
 
