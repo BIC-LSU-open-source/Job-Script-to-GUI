@@ -6,7 +6,7 @@ A set of directive rules and parsers for converting a job batch script into some
 **BIC-LSU Input Block**<br />
 \<BIC input,text,\<prefix>,\<default>,\<suffix> LSU><br />
 \<BIC input,file_brwoser,\<allowed path type>,\<prefix>,\<suffix> Lsu><br />
-"allowed path type" can be "both" or "directory".
+"allowed path type" can be "all" or "directory".
 
 **BIC-LSU List Block**<br />
 \<BIC list,\<prefix>,\<suffix>,\<BIC-LSU input block 1>,...,\<BIC-LSU input block N> LSU>
@@ -31,8 +31,8 @@ preceeding regular statements
 
 #PBS -o <BIC input,file_browser,directory,Output Directory: , LSU>
 var_A=<BIC input,text,Parallelism: ,4,Thread(s) LSU>
-cat <BIC input,file_browser,both,Document to Display: , LSU>
-cp <BIC var_list,Files to Copy: ,,<BIC input,file_browser,both,Source File, LSU> LSU> -t $HOME
+cat <BIC input,file_browser,all,Document to Display: , LSU>
+cp <BIC var_list,Files to Copy: ,,<BIC input,file_browser,all,Source File, LSU> LSU> -t $HOME
 
 proceeding regular statements
 ```
@@ -68,7 +68,7 @@ The format of \<GUI skeleton>
     }, 
     {
         "component_type": "input",
-        "path_type": "both", 
+        "path_type": "all", 
         "prefix": "Document to Display: ", 
         "suffix": "", 
         "sequence": 2, 
@@ -80,7 +80,7 @@ The format of \<GUI skeleton>
         "input_template": 
         {
             "component_type": "input",
-            "path_type": "both", 
+            "path_type": "all", 
             "prefix": "Source File", 
             "suffix": "", 
             "sequence": 3, 
