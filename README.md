@@ -17,7 +17,7 @@ A set of directive rules and parsers for converting a job batch script into some
 
 ## Program Usage
 
-1. Run **BICLSU_JobScript_to_GUISkeleton.py** on the job batch script tagged with directives to generate a coverted script and a skeleton for creating a GUI.  The converted script and the skeleton maintain the mapping of each pair of the variable in the converted script and the variables in the skeleton using an identical sequence number. 
+1. Run **BICLSU_JobScript_to_GUISkeleton.py** on the job batch script tagged with directives to generate a coverted script and a skeleton for creating a GUI.  The converted script and the skeleton maintain the mapping of each pair of the variable in the converted script and the variables in the skeleton using one unique sequence number. 
 2. Run **BICLSU_GUIInput_to_JobScript.py** to map the inputs collected from the GUI back into the converted script to generate a submittable job batch script.
 
 ### BICLSU_JobScript_to_GUISkeleton.py Usage
