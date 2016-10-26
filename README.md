@@ -5,7 +5,7 @@ A set of directive rules and parsers for converting a job batch script into some
 
 **BIC-LSU Input Block**<br />
 \<BIC input,text,\<prefix>,\<default>,\<suffix> LSU><br />
-\<BIC input,file_brwoser,\<allowed path type>,\<prefix>,\<suffix> Lsu><br />
+\<BIC input,file_brwoser,\<allowed path type>,\<prefix>,\<suffix> LSU><br />
 "allowed path type" can be "all" or "directory".
 
 **BIC-LSU List Block**<br />
