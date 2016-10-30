@@ -93,12 +93,12 @@ The format of \<GUI skeleton>
 
 The format of \<converted script>
 ```
-preceeding regular statements\n
-#PBS -o <BIC 0 LSU>\n
-var_A=<BIC 1 LSU>\n
-cat <BIC 2 LSU>\n
-cp <BIC 3 LSU> -t $HOME\n
-proceeding regular statements\n
+preceeding regular statements
+#PBS -o <BIC 0 LSU>
+var_A=<BIC 1 LSU>
+cat <BIC 2 LSU>
+cp <BIC 3 LSU> -t $HOME
+proceeding regular statements
 ```
 
 ### BICLSU_GUIInput_to_JobScript.py Usage
