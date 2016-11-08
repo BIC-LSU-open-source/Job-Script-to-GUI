@@ -111,25 +111,25 @@ BICLSU_GUIInput_to_JobScript.py \<converted script path> \<input from GUI path>
 [
     {
         "value": "/home/user/output_dir",
-        "sequence": 0
+        "sequence": "0"
     }, 
     {
         "value": "2",
-        "sequence": 1
+        "sequence": "1"
     },
     {
         "value": "/home/user/document_file",
-        "sequence": 2
+        "sequence": "2"
     },
     {
         "value": "/home/user/result/source_file1",
-        "sequence": 3,
-        "sub_sequence": 0
+        "sequence": "3",
+        "sub_sequence": "0"
     },
     {
         "value": "/home/user/result/source_file2",
-        "sequence": 3,
-        "sub_sequence": 1
+        "sequence": "3",
+        "sub_sequence": "1"
     }
 ]
 ```
