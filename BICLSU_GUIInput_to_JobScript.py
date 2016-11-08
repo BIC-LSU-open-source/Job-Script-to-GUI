@@ -46,7 +46,7 @@ def generateSubmittableScript(
         #else
         #    append value to accumulated_string
 
-        sequence = one_var["sequence"]
+        sequence = int(one_var["sequence"])
 
         if not sequence == current_sequence:
             # new sequence
@@ -72,7 +72,7 @@ def generateSubmittableScript(
                 index_temp_start + match.end()
 
             try:
-                sub_sequence = one_var["sub_sequence"]
+                sub_sequence = int(one_var["sub_sequence"])
 
             except KeyError:
                 # without sub sequence
@@ -85,7 +85,7 @@ def generateSubmittableScript(
 
         else:
             # old sequence
-            accumulated_values += one_var["value"]
+            accumulated_values += one_var["value"] + " "
             current_sub_sequence += 1
 
         #print("script: " + submittable_script)
