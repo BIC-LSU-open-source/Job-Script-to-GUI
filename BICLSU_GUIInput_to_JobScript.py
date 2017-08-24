@@ -85,7 +85,7 @@ def generateSubmittableScript(
 
         else:
             # old sequence
-            accumulated_values += one_var["value"] + " "
+            accumulated_values += " " + one_var["value"]
             current_sub_sequence += 1
 
         #print("script: " + submittable_script)
