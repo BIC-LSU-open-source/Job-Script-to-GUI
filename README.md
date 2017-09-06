@@ -32,7 +32,7 @@ preceeding regular statements
 #PBS -o <BIC input,file_browser,directory,Output Directory: , LSU>
 var_A=<BIC input,text,Parallelism: ,4,Thread(s) LSU>
 cat <BIC input,file_browser,all,Document to Display: , LSU>
-cp <BIC var_list,Files to Copy: ,,<BIC input,file_browser,all,Source File, LSU> LSU> -t $HOME
+cp <BIC var_list,Files to Copy: ,,<BIC input,file_browser,all,Source File, LSU> LSU> -t ${HOME}
 
 proceeding regular statements
 ```
